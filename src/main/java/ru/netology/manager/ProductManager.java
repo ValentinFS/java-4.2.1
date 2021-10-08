@@ -4,6 +4,8 @@ package ru.netology.manager;
 import ru.netology.domain.Ticket;
 import ru.netology.repository.ProductRepository;
 
+import java.util.Comparator;
+
 public class ProductManager {
     private ProductRepository repository;
 
@@ -19,7 +21,7 @@ public class ProductManager {
         return repository.findAll();
     }
 
-    public Ticket[] searchBy(String from, String to) {
+    public Ticket[] searchBy(String from, String to, Comparator<Ticket> comparator) {
         Ticket[] result = new Ticket[0];
         for (Ticket product : repository.findAll()) {
             if (product.matches(from, to)) {

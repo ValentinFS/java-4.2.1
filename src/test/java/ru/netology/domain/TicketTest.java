@@ -50,7 +50,7 @@ class TicketTest {
         Ticket[] expected = new Ticket[]{ticket1, ticket5, ticket3};
         Ticket[] actual = manager.searchBy("VKO", "KJA");
 
-        Arrays.sort(actual);
+        Arrays.sort(actual, comporator);
 
         assertArrayEquals(expected, actual);
 
