@@ -36,9 +36,7 @@ class TicketTest {
         Ticket[] expected = new Ticket[]{ticket1, ticket6, ticket2, ticket5, ticket4, ticket3};
         Ticket[] actual = new Ticket[]{ticket3, ticket1, ticket2, ticket5, ticket4, ticket6};
 
-        Arrays.sort(actual);
-
-        assertArrayEquals(expected, actual);
+        assertArrayEquals(expected,manager.getAll());
 
     }
 
