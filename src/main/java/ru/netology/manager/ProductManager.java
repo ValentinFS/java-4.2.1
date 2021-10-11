@@ -4,6 +4,8 @@ package ru.netology.manager;
 import ru.netology.domain.Ticket;
 import ru.netology.repository.ProductRepository;
 
+import java.util.Arrays;
+
 public class ProductManager {
     private ProductRepository repository;
 
@@ -16,6 +18,7 @@ public class ProductManager {
     }
 
     public Ticket[] getAll() {
+//        Arrays.sort(repository.findAll());
         return repository.findAll();
     }
 
@@ -29,6 +32,8 @@ public class ProductManager {
                 result = tmp;
             }
         }
+        Arrays.sort(result);
+        System.out.println("После сортировки осталось " + result.length + " билета.");
         return result;
     }
 

@@ -17,6 +17,7 @@ public class ProductRepository {
     }
 
     public Ticket[] findAll() {
+        System.out.println("Добавлено в репозиторий " + items.length + " билетов.");
         return items;
     }
 
