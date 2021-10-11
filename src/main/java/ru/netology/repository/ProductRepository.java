@@ -13,10 +13,10 @@ public class ProductRepository {
         int lastIndex = tmp.length - 1;
         tmp[lastIndex] = item;
         items = tmp;
-//        System.out.println("Продукт " + length + " добавлен.");
     }
 
     public Ticket[] findAll() {
+        System.out.println("Добавлено в репозиторий " + items.length + " билетов.");
         return items;
     }
 

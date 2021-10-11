@@ -19,10 +19,8 @@ public class ProductManager {
     }
 
     public Ticket[] getAll() {
-        Arrays.sort(repository.findAll());
         return repository.findAll();
     }
-
 
     public Ticket[] searchBy(String from, String to, Comparator<Ticket> comparator) {
         Ticket[] result = new Ticket[0];
@@ -34,10 +32,10 @@ public class ProductManager {
                 result = tmp;
             }
         }
+        Arrays.sort(result, comparator);
+        System.out.println("После сортировки осталось " + result.length + " билета.");
         return result;
     }
-
-
 
 
 }
